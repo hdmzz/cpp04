@@ -6,28 +6,32 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:56 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/09 15:36:46 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/14 00:42:34 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include <iostream>
 
+/*******************************************************************************
+ * 							Constructor/Destructor							
+ * *****************************************************************************/
+
 Character::Character( void )
 {
 	std::cout << "Character constructor called" << std::endl;
-	this->initializeEmptyInventory();
+	this->_initializeEmptyInventory();
 	return ;
 }
 
-Character::Character( std::string name) : _name(name)
+Character::Character( std::string name ) : _name( name )
 {
 	std::cout << "Character name constructor called" << std::endl;
-	this->initializeEmptyInventory();
+	this->_initializeEmptyInventory();
 	return ;
 }
 
-Character::Character( Character const & src)
+Character::Character( Character const & src )
 {
 	std::cout << "Character copy constructor called" << std::endl;
 	*this = src;
@@ -36,17 +40,26 @@ Character::Character( Character const & src)
 
 Character::~Character( void )
 {
-	std::cout << "Character destructor called" << std::endl;
+	std::cout << "Character destructor called for " << this->_name << std::endl;
+	this->_deleteInventory();
 	return ;
 }
 
-Character& Character::operator=(Character const & rhv)
+/*******************************************************************************
+ * 										operator
+ * *****************************************************************************/
+
+Character& Character::operator=( Character const & rhv )
 {
-	if (this != &rhv)
+	if ( this != &rhv )
 	{
 		this->_name = rhv._name;
-		//dabord delete ancien puis remplacer l'ancien par le nouveaux
-		
+		this->_deleteInventory();
+		for ( int i = 0; i < this->_numberMaxOfItems; i++ )
+		{
+			if ( rhv._inventory[i] != NULL)
+				this->_inventory[i] = rhv._inventory[i]->clone();
+		}
 	}
 	return ( *this );
 }
@@ -64,7 +77,7 @@ std::string const & Character::getName() const
  * 									Member function
  * *****************************************************************************/
 
-void Character::equip(AMateria* m)
+void Character::equip( AMateria* m )
 {
 	if ( m == NULL )
 	{
@@ -81,14 +94,36 @@ void Character::equip(AMateria* m)
 	}
 }
 
-void Character::unequip(int idx)
+void Character::unequip( int idx )
 {
-	
+	if ( idx < 0 || idx >= this->_numberMaxOfItems)
+	{
+		std::cout << this->_name << " cant unequip cause the index is not good" << std::endl;
+		return ;
+	}
+	if ( this->_inventory[idx] == NULL )
+	{
+		std::cout << this->_name << " don't have anything at the index " << idx << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " unequip a " << this->_inventory[idx]->getType() << std::endl;
+	this->_inventory[idx] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target)
+/*
+La fonction membre use(int, ICharacter&) utilisera la Materia de l’emplacement[idx],
+et passera la cible en paramètre à la fonction AMateria::use.
+*/
+void Character::use( int idx, ICharacter& target )
 {
-	
+	if (idx < 0 || idx >= this->_numberMaxOfItems)
+	{
+		std::cout << this->_name << " can't use the item, not a valid index" << std::endl;
+		return;
+	}
+	if (this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use( target );
+	return ;
 }
 
 void Character::_initializeEmptyInventory( void )
@@ -98,3 +133,15 @@ void Character::_initializeEmptyInventory( void )
 	return ;
 }
 
+void Character::_deleteInventory() 
+{
+	for(int i = 0; i < this->_numberMaxOfItems; i++)
+	{
+		if(this->_inventory[i] != NULL)
+		{
+			delete ( this->_inventory[i] );
+			this->_inventory[i] = NULL;
+		}
+	}
+	return ;
+}

@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:07:04 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/13 22:17:51 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/13 23:04:49 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 
 	Ice& operator=(Ice const & rhv);
 	AMateria* clone() const;
-	void use(int idx, ICharacter& target);
+	void use( ICharacter& target );
 
 };
 
