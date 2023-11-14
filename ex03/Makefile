@@ -1,11 +1,11 @@
 .PHONY: all re clean fclean
 
 # Program name
-NAME	= animal
+NAME	= material
 
 # Compiler
 CC		= c++
-CFLAGS	= -Werror -Wextra -Wall -g -std=c++98
+CFLAGS	= -Werror -Wextra -Wall -g3 -std=c++98
 
 # Build files
 INC_PATH	= ./includes/

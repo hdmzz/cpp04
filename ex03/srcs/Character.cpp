@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:56 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/14 00:42:34 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/14 02:36:03 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,13 +107,9 @@ void Character::unequip( int idx )
 		return ;
 	}
 	std::cout << this->_name << " unequip a " << this->_inventory[idx]->getType() << std::endl;
-	this->_inventory[idx] = NULL;
+	
 }
 
-/*
-La fonction membre use(int, ICharacter&) utilisera la Materia de l’emplacement[idx],
-et passera la cible en paramètre à la fonction AMateria::use.
-*/
 void Character::use( int idx, ICharacter& target )
 {
 	if (idx < 0 || idx >= this->_numberMaxOfItems)

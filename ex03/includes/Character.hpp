@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:45:27 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/13 23:51:03 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/14 02:02:37 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ private:
 	void				_deleteInventory( void );
 	static const int	_numberMaxOfItems = 4;
 	std::string			_name;
-	AMateria*			_inventory[4];//les élément present dans 
+	AMateria*			_inventory[4];
 };
 
 #endif

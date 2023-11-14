@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:44:07 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/13 23:46:12 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/14 02:57:58 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ AMateria* Cure::clone() const
 	return ( cureClone );
 }
 
-void	use( ICharacter& target )
+void	Cure::use( ICharacter& target )
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;
