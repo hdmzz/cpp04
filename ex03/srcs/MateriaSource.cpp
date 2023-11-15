@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:58:44 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/14 04:52:33 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/15 23:10:51 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,9 @@ void		MateriaSource::learnMateria(AMateria* src)
 			std::cout << "Materia of type " << this->_materias[i]->getType() << " learned" << std::endl;
 			return ;
 		}
-		if ( i >= 4 ) {
-			std::cout << "MateriaSource items full can't learn another one" << std::cout;
-			return ;
-		}
 	}
+	std::cout << "MateriaSource can't learn any more materia." << std::endl;
+	delete src;
 	return ;
 }
 

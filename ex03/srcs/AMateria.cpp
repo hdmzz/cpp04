@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 09:08:39 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/14 04:24:35 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:41:39 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ AMateria::AMateria(AMateria const & src) : _type(src._type)
 AMateria::~AMateria()
 {
 	std::cout << "AMateria regular Destructor called" << std::endl;
-	
 	return ;
 }
 

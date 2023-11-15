@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:56 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/14 02:36:03 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/15 23:06:00 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,8 +106,8 @@ void Character::unequip( int idx )
 		std::cout << this->_name << " don't have anything at the index " << idx << std::endl;
 		return ;
 	}
-	std::cout << this->_name << " unequip a " << this->_inventory[idx]->getType() << std::endl;
-	
+	std::cout << this->_name << " unequip a " << this->_inventory[idx]->getType() << " materia"<< std::endl;
+	this->_inventory[idx] = NULL;
 }
 
 void Character::use( int idx, ICharacter& target )
