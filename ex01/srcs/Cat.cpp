@@ -6,11 +6,11 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:00:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/09 01:24:36 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 02:32:08 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../includes/Cat.hpp"
 
 /*******************************************************************************/
 /*								Constructor Destructor							*/
@@ -66,4 +66,8 @@ void	Cat::makeSound() const
 	return ;
 }
 
+Brain*	Cat::getBrain() const
+{
+	return	(this->_brain);
+}
 

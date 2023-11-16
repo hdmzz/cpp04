@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:01:31 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/05 16:16:15 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 01:03:03 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ public:
 	~Dog();
 
 	Dog& operator=(Dog & rhv);
-private:
+
+	void	makeSound() const;
 };
 
 #endif

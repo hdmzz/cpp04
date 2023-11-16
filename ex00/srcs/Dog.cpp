@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:03:03 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/05 16:16:23 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 01:03:59 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,14 @@ Dog& Dog::operator=(Dog & rhv)
 	if (this != &rhv)
 		this->_type = rhv._type;
 	return (*this);
+}
+
+/*******************************************************************************
+ * 								Member function									
+*******************************************************************************/
+
+void	Dog::makeSound() const
+{
+	std::cout << "Wouf!" << std::endl;
+	return ;
 }

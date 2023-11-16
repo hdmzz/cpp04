@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 10:28:01 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/05 17:35:54 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 01:23:30 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	testSubject(void)
 int	main(void)
 {
 	testWrong();
-	testCorrect();
-	testSubject();
+	//testCorrect();
+	//testSubject();
 	return (0);
 }

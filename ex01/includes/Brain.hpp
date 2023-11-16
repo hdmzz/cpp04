@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:56:36 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/08 23:12:33 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 02:28:26 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ public:
 	~Brain();
 	
 	Brain& operator=(Brain const & rhs);
+
+	void	setIdea(int idx, std::string idea);
+	std::string const	Brain::getIdea(int idx) const;
+
 };
 
 #endif
