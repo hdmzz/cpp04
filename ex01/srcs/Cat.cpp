@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:00:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/16 02:32:08 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 05:08:58 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 /*******************************************************************************/
 
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain())
+Cat::Cat() : Animal(), _brain(new Brain())
 {
 	std::cout << "Cat regular constructor called" << std::endl;
+	this->_type = "Cat";
 	return ;
 }
 
 //brain est init a NULL, puis l'assignateur est appellé
 //et se chrgera d'allouer la mémoire necessaire
-Cat::Cat(Cat const & src) : Animal("Cat"), _brain(NULL)
+Cat::Cat(Cat const & src) : Animal(), _brain(NULL)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
@@ -70,4 +71,3 @@ Brain*	Cat::getBrain() const
 {
 	return	(this->_brain);
 }
-

@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:57:38 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/16 03:01:57 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 04:53:14 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ Brain::~Brain()
 Brain&	Brain::operator=(Brain const & rhs)
 {
 	std::cout << "Brain assignement operator called" << std::endl;
-	if (this != &rhs)
+	if ( this != &rhs )
 	{
-		for (int i = 0; i > 100; i++)
+		for (int i = 0; i < 100; i++)
 			this->ideas[i] = rhs.ideas[i];
 	}
-	return (*this);
+	return ( *this );
 }
 
 std::string const	Brain::getIdea(int idx) const
 {
 	if (idx < 0)
 		idx = 0;
-	return ( this->ideas[idx % 99]);
+	return ( this->ideas[idx % 99] );
 }
 
 void	Brain::setIdea(int idx, std::string idea)

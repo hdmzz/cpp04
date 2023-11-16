@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 12:47:56 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/15 23:06:00 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 05:55:02 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void Character::equip( AMateria* m )
 			return ;
 		}
 	}
+	std::cout << this->_name << " can't equip anymore items" << std::endl;
+	return ;
 }
 
 void Character::unequip( int idx )

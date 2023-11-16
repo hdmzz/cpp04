@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:12:59 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/05 18:00:51 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 05:16:42 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ WrongCat::~WrongCat()
 WrongCat&	WrongCat::operator=(WrongCat const & rhs)
 {
 	if (this != &rhs)
-		this->_type = rhs._type;
+		*this = rhs;
 	return (*this);
 }
 

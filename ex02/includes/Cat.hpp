@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:58:54 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/09 00:35:55 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 05:25:20 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ class Cat : public Animal
 public:
 	Cat();
 	Cat(Cat const & src);
-	~Cat();
+	virtual ~Cat();
 
 	Cat& operator=(Cat const & rhv);
 	
 	void	makeSound() const;
-
+	Brain*	getBrain() const;
 private:
 	Brain* _brain;
 };

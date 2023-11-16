@@ -6,7 +6,7 @@
 /*   By: hdamitzi <hdamitzi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 10:29:04 by hdamitzi          #+#    #+#             */
-/*   Updated: 2023/11/09 08:18:15 by hdamitzi         ###   ########.fr       */
+/*   Updated: 2023/11/16 05:03:16 by hdamitzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ public:
 	Animal();
 	Animal(std::string const type);
 	Animal(Animal const & src);
-	virtual ~Animal();//virtual signifie que cette fonction peut etre remplacé par les classes dérivées
-	//important quand on veut que le bon destructor soit appelé quand un objet
-	//d'une classe dérivé est delete par le biais d'un pointeur sur la classe de base
-	//si pas virtual ====> leaks 
+	virtual ~Animal();
 	Animal& operator=(Animal const & rhv);
 
 	std::string		getType() const;
